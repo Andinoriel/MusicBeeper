@@ -4,19 +4,35 @@ void MusicBeeper::BeepGoT(void) noexcept
 {
 	for (size_t t = 0; t < Music::GoT.second.size(); ++t)
 	{
-		::Beep(static_cast<size_t>(Music::GoT.second.at(t).first), Music::GoT.second.at(t).second.first);
-		//::Sleep(Music::GoT.second.at(t).second.second);
+		Beeper::Beep(static_cast<size_t>(Music::GoT.second.at(t).first), Music::GoT.second.at(t).second.first);
+		#ifdef __linux__ 
+			// usleep(Music::GoT.second.at(t).second.second);
+		#elif _WIN32
+			//::Sleep(Music::GoT.second.at(t).second.second);
+		#endif
 	};
 };
 void MusicBeeper::BeepImperialMarch(void) noexcept
 {
 	for (size_t t = 0; t < Music::ImperialMarch.second.size(); ++t)
 	{
-		::Beep(static_cast<size_t>(Music::ImperialMarch.second.at(t).first), Music::ImperialMarch.second.at(t).second.first);
-		::Sleep(Music::ImperialMarch.second.at(t).second.second);
+		Beeper::Beep(static_cast<size_t>(Music::ImperialMarch.second.at(t).first), Music::ImperialMarch.second.at(t).second.first);
+		#ifdef __linux__ 
+			// usleep(Music::ImperialMarch.second.at(t).second.second);
+		#elif _WIN32
+			//::Sleep(Music::ImperialMarch.second.at(t).second.second);
+		#endif
 	};
 };
 
+void MusicBeeper::Beeper::Beep(size_t frequency, size_t time) noexcept
+{
+#ifdef __linux__ 
+	fprintf(stderr,"\033[10;%d]\033[11;%d]\a", frequency, time);
+#elif _WIN32
+	::Beep(frequency, time);
+#endif
+};
 MusicBeeper::Music::song MusicBeeper::Music::GoT =
 {
 	"GoT",

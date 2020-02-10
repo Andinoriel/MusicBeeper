@@ -1,6 +1,5 @@
 # MusicBeeper
 Beep... beep... beeeeeeeeeeeeeep...
-(now only on Windows(c))
 
 ## Available songs
 1. GoT soundtrack
@@ -9,7 +8,7 @@ Beep... beep... beeeeeeeeeeeeeep...
 ## Build
 ```
 git clone
-cmake  -B ./build -G ...
+cmake -B ./build -G ...
 cd build
 cmake --build .
 ./MusicBeeper

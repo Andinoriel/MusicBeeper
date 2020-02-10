@@ -1,9 +1,9 @@
 #include "MusicBeeper.hpp"
 
-int __cdecl main()
+int main()
 {
 	// ...
 	MusicBeeper::BeepGoT();
 	MusicBeeper::BeepImperialMarch();
-	return EXIT_SUCCESS;
+	return 0;
 };

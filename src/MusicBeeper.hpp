@@ -5,7 +5,11 @@
 #include <vector>
 #include <string>
 
-#include <Windows.h>
+#ifdef __linux__ 
+    #include <unistd.h>
+#elif _WIN32
+    #include <Windows.h>
+#endif
 
 class MusicBeeper
 {
@@ -49,6 +53,11 @@ private:
 
 		static song GoT;
 		static song ImperialMarch;
+	};
+	class Beeper
+	{
+	public:
+		static void Beep(size_t frequency, size_t time) noexcept;
 	};
 };
 
