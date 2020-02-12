@@ -20,17 +20,18 @@ public:
 	static void BeepGoT(void) noexcept;
 	static void BeepImperialMarch(void) noexcept;
 	static void BeepSovietAnthem(void) noexcept;
+	static void BeepOdeToJoy(void) noexcept;
 private:
 	class Music
 	{
 	public:
 		enum class Note
 		{
-			F3 = 175,			G3 = 196,			GS3 = 208,			AS3 = 233,			C4 = 262,
-			D4 = 294,			DS4 = 311,			E4 = 330,			F4 = 349,			GB4 = 369,
-			G4 = 392,			AB4 = 415,			A4 = 440,			BB4 = 466,			B4 = 493,
-			C5 = 523,			DB5 = 554,			D5 = 587,			EB5 = 622,			E5 = 659,
-			F5 = 698,			GB5 = 739,			G5 = 784,
+			F3 = 175,			G3 = 196,			GS3 = 208,			A3 = 220,			AS3 = 233,			
+			C4 = 262,			D4 = 294,			DS4 = 311,			E4 = 330,			F4 = 349,			
+			GB4 = 369,			G4 = 392,			AB4 = 415,			A4 = 440,			BB4 = 466,			
+			B4 = 493,			C5 = 523,			DB5 = 554,			D5 = 587,			EB5 = 622,			
+			E5 = 659,			F5 = 698,			GB5 = 739,			G5 = 784,
 		};
 
 		// pair of Note and pair of beep time and pause after beep
@@ -97,31 +98,32 @@ private:
 		{
 			"Soviet Anthem",
 			{
-				{Music::Note::G4 , {375 ,0}},
-				{Music::Note::C5 , {750 ,0}},
-				{Music::Note::G4 , {463 ,0}},
-				{Music::Note::A4 , {187 ,0}},
-				{Music::Note::B4 , {750 ,0}},
-				{Music::Note::E4 , {375 ,0}},
-				{Music::Note::E4 , {375 ,0}},
-				{Music::Note::A4 , {750 ,0}},
-				{Music::Note::G4 , {463 ,0}},
-				{Music::Note::F4 , {187 ,0}},
-				{Music::Note::G4 , {750 ,0}},
-				{Music::Note::C4 , {463 ,0}},
-				{Music::Note::C4 , {187 ,0}},
-				{Music::Note::D4 , {750 ,0}},
-				{Music::Note::D4 , {463 ,0}},
-				{Music::Note::E4 , {187 ,0}},
-				{Music::Note::F4 , {750 ,0}},
-				{Music::Note::F4 , {463 ,0}},
-				{Music::Note::G4 , {187 ,0}},
-				{Music::Note::A4 , {750 ,0}},
-				{Music::Note::B4 , {375 ,0}},
-				{Music::Note::C5 , {375 ,0}},
-				{Music::Note::D5 , {1125,0}},
+				{Music::Note::G4 , {375 ,0}},				{Music::Note::C5 , {750 ,0}},				{Music::Note::G4 , {463 ,0}},				{Music::Note::A4 , {187 ,0}},
+				{Music::Note::B4 , {750 ,0}},				{Music::Note::E4 , {375 ,0}},				{Music::Note::E4 , {375 ,0}},				{Music::Note::A4 , {750 ,0}},
+				{Music::Note::G4 , {463 ,0}},				{Music::Note::F4 , {187 ,0}},				{Music::Note::G4 , {750 ,0}},				{Music::Note::C4 , {463 ,0}},
+				{Music::Note::C4 , {187 ,0}},				{Music::Note::D4 , {750 ,0}},				{Music::Note::D4 , {463 ,0}},				{Music::Note::E4 , {187 ,0}},
+				{Music::Note::F4 , {750 ,0}},				{Music::Note::F4 , {463 ,0}},				{Music::Note::G4 , {187 ,0}},				{Music::Note::A4 , {750 ,0}},
+				{Music::Note::B4 , {375 ,0}},				{Music::Note::C5 , {375 ,0}},				{Music::Note::D5 , {1125,0}},
 			}
 		};
+		inline static song OdeToJoy =
+		{
+			"Ode to Joy",
+			{
+				{Music::Note::GB4, {250,0}},				{Music::Note::GB4, {250,0}},				{Music::Note::G4,  {250,0}},				{Music::Note::A4,  {250,0}},		
+				{Music::Note::A4,  {250,0}},				{Music::Note::G4,  {250,0}},				{Music::Note::GB4, {250,0}},				{Music::Note::E4,  {250,0}},
+				{Music::Note::D4,  {250,0}},				{Music::Note::D4,  {250,0}},				{Music::Note::E4,  {250,0}},				{Music::Note::GB4, {250,0}},
+				{Music::Note::GB4, {375,0}},				{Music::Note::E4,  {125,0}},				{Music::Note::E4,  {500,0}},				{Music::Note::GB4, {250,0}},
+				{Music::Note::GB4, {250,0}},				{Music::Note::G4,  {250,0}},				{Music::Note::A4,  {250,0}},				{Music::Note::A4,  {250,0}},
+				{Music::Note::G4,  {250,0}},				{Music::Note::GB4, {250,0}},				{Music::Note::E4,  {250,0}},				{Music::Note::D4,  {250,0}},
+				{Music::Note::D4,  {250,0}},				{Music::Note::E4,  {250,0}},				{Music::Note::GB4, {250,0}},				{Music::Note::E4,  {375,0}},
+				{Music::Note::D4,  {125,0}},				{Music::Note::D4,  {500,0}},				{Music::Note::E4,  {250,0}},				{Music::Note::E4,  {250,0}},
+				{Music::Note::GB4, {250,0}},				{Music::Note::D4,  {250,0}},				{Music::Note::E4,  {250,0}},				{Music::Note::GB4, {125,0}},
+				{Music::Note::G4,  {125,0}},				{Music::Note::GB4, {250,0}},				{Music::Note::D4,  {250,0}},				{Music::Note::E4,  {250,0}},
+				{Music::Note::GB4, {125,0}},				{Music::Note::G4,  {125,0}},				{Music::Note::GB4, {250,0}},				{Music::Note::E4,  {250,0}},
+				{Music::Note::D4,  {250,0}},				{Music::Note::E4,  {250,0}},				{Music::Note::A3,  {250,0}},
+			}								
+		};														
 	#pragma endregion
 	};
 
