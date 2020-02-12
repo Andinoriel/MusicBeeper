@@ -8,6 +8,10 @@ void MusicBeeper::BeepImperialMarch(void) noexcept
 {
 	Beep(Music::ImperialMarch);
 };
+void MusicBeeper::BeepSovietAnthem(void) noexcept
+{
+	Beep(Music::SovietAnthem);
+};
 
 void MusicBeeper::Beep(Music::song song) noexcept
 {

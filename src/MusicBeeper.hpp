@@ -19,6 +19,7 @@ public:
 
 	static void BeepGoT(void) noexcept;
 	static void BeepImperialMarch(void) noexcept;
+	static void BeepSovietAnthem(void) noexcept;
 private:
 	class Music
 	{
@@ -90,6 +91,35 @@ private:
 				{Music::Note::BB4,	{50 ,100}},				{Music::Note::DS4,	{75 ,400}},				{Music::Note::G4,	{350,200}},				{Music::Note::DS4,	{250,100}},
 				{Music::Note::BB4,	{75 ,100}},				{Music::Note::G4,	{300,100}},				{Music::Note::DS4,	{250,150}},				{Music::Note::BB4,	{75 ,100}},
 				{Music::Note::G4,	{700,100}},
+			}
+		};
+		inline static song SovietAnthem =
+		{
+			"Soviet Anthem",
+			{
+				{Music::Note::G4 , {375 ,0}},
+				{Music::Note::C5 , {750 ,0}},
+				{Music::Note::G4 , {463 ,0}},
+				{Music::Note::A4 , {187 ,0}},
+				{Music::Note::B4 , {750 ,0}},
+				{Music::Note::E4 , {375 ,0}},
+				{Music::Note::E4 , {375 ,0}},
+				{Music::Note::A4 , {750 ,0}},
+				{Music::Note::G4 , {463 ,0}},
+				{Music::Note::F4 , {187 ,0}},
+				{Music::Note::G4 , {750 ,0}},
+				{Music::Note::C4 , {463 ,0}},
+				{Music::Note::C4 , {187 ,0}},
+				{Music::Note::D4 , {750 ,0}},
+				{Music::Note::D4 , {463 ,0}},
+				{Music::Note::E4 , {187 ,0}},
+				{Music::Note::F4 , {750 ,0}},
+				{Music::Note::F4 , {463 ,0}},
+				{Music::Note::G4 , {187 ,0}},
+				{Music::Note::A4 , {750 ,0}},
+				{Music::Note::B4 , {375 ,0}},
+				{Music::Note::C5 , {375 ,0}},
+				{Music::Note::D5 , {1125,0}},
 			}
 		};
 	#pragma endregion
