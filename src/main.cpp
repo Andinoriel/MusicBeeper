@@ -1,6 +1,6 @@
 #include "MusicBeeper.hpp"
 
-int main()
+int main(void)
 {
 	// ...
 	MusicBeeper::BeepGoT();
