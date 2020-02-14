@@ -8,6 +8,10 @@ Beep... beep... beeeeeeeeeeeeeep...
 4. Ode to Joy
 
 ## Build
+Make sure that you made **/dev/input/by-path/platform-pcspkr-event-spkr** device available:
+```
+sudo modprobe pcspkr
+```
 ```
 git clone
 cmake -B ./build -G ...

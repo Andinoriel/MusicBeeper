@@ -4,14 +4,39 @@
 
 #include <vector>
 #include <string>
+#include <functional>
 
 #ifdef __linux__ 
-    #include <unistd.h>
+	#include <unistd.h>
+	#include <fcntl.h>
+
+	#include <ctime>
+	#include <cmath>
+	#include <cstdint>
+
+	#include <signal.h>
+
+	// from linux/input-event-codes.h
+	#define __EV_SND 0x12
+	#define __SND_TONE 0x2
+
+	typedef struct
+	{
+		timeval time;
+		uint16_t type;
+		uint16_t code;
+		int32_t value;
+	} input_event;
+
+	[[noreturn]] void __ctrl_c_break_handle(sig_atomic_t);
+	#define __PREVENT_BEEP_LOOP(callback) signal(SIGINT, (callback));
+	#define PREVENT_BEEP_LOOP __PREVENT_BEEP_LOOP(__ctrl_c_break_handle)
 #elif _WIN32
     #include <Windows.h>
+	#define PREVENT_BEEP_LOOP
 #endif
 
-class MusicBeeper
+class MusicBeeper final
 {
 public:
 	MusicBeeper() = delete;
@@ -31,7 +56,8 @@ private:
 			C4 = 262,			D4 = 294,			DS4 = 311,			E4 = 330,			F4 = 349,			
 			GB4 = 369,			G4 = 392,			AB4 = 415,			A4 = 440,			BB4 = 466,			
 			B4 = 493,			C5 = 523,			DB5 = 554,			D5 = 587,			EB5 = 622,			
-			E5 = 659,			F5 = 698,			GB5 = 739,			G5 = 784,
+			E5 = 659,			F5 = 698,			GB5 = 739,			G5 = 784,			A5 = 880,
+			B5 = 987,			C6 = 1046,			D6 = 1174,
 		};
 
 		// pair of Note and pair of beep time and pause after beep
@@ -123,7 +149,7 @@ private:
 				{Music::Note::GB4, {125,0}},				{Music::Note::G4,  {125,0}},				{Music::Note::GB4, {250,0}},				{Music::Note::E4,  {250,0}},
 				{Music::Note::D4,  {250,0}},				{Music::Note::E4,  {250,0}},				{Music::Note::A3,  {250,0}},
 			}								
-		};														
+		};
 	#pragma endregion
 	};
 
