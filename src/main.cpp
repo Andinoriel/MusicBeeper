@@ -1,6 +1,5 @@
 #include "MusicBeeper.hpp"
 
-
 int main(void)
 {
 	PREVENT_BEEP_LOOP;
