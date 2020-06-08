@@ -9,10 +9,10 @@ Beep... beep... beeeeeeeeeeeeeep...
 
 ## Build
 Make sure that you made **/dev/input/by-path/platform-pcspkr-event-spkr** device available:
-```
+```sh
 sudo modprobe pcspkr
 ```
-```
+```sh
 git clone
 cmake -B ./build -G ...
 cd build
